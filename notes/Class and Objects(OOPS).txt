@@ -1,0 +1,187 @@
+Class and Objects(OOPS)
+---------------------------------
+function : It is declared outside the class.
+method : It is declared inside the class.
+
+lst = [1,3,5,6]
+List is class ---> inbuilt ---> inside of this different methods are present like insert, pop, remove ---> but we cant access
+this method directly --> hence we create the object and by this object we can access the methods.
+Example:
+-------------
+lst = [1,3,5,6,7]
+
+Suppose we can insert new element into list then we use the method.
+lst.insert(index, value)  ---> here dot represent object.
+
+What is mean by class and object?
+-----------------------------------------------
+class :
+------
+The class is user defined data structure that binds the data members and methods into a single unit.
+Class is blueprint or code template.
+Class contains,
+a) data members
+b) member functions(methods)
+c) constructor
+
+
+data members : variable declarations
+member function(methods) : It is reusable code. We cant directly access the method. So we create the object of the class.
+
+Object:
+-------------
+An object is instance of class. 
+You can create multiple objects from one class.  
+It is collection of data member and method.
+We can use the object to perform actions. Object has the two characteristics one is state of an object and another is behaviour
+of an object. 
+The following information shows the real time and in programming what is state and behaviour.
+
+
+In Real Life
+---------------------
+State : colour, height, width, weight
+behaviour : writing , code writing, watching movies,
+
+In Programming language:
+-------------------------
+State : An object has an attribute that represent a state of the object.
+Attribute is nothing but extra information about the tag.
+Example:
+----------
+<img src="" height="" width = "" alt="" >
+
+behaviour: methods represents the behaviour.
+Suppose i will create one bank project, in that there are two methods one is withdraw method and another is deposite method.
+
+A real life of example of class and object.
+Class : Person
+    State : name, gender, email, mob, city
+    Behaviour : Working, Study, driving ...etc..
+
+Using the above class we can create multiple object.
+Object 1:
+    State:
+         name : Ashok
+         gender : male
+    Behaviour:
+         Working : He is software engineer in ABC company
+
+Object 2:
+    State:
+         name : Sunil
+         gender : male
+    Behaviour:
+         Working : He is Manager at XYZ company
+
+
+Q. how we can create the class?
+-------------------------------------------------
+In python class is defined by using the keyword "class". 
+The syntax of class declaration is as below,
+The class name always start with first letter capital.
+
+When we declared any method inside the class the first argument in method is self keyword. If you don't
+want use name self then  You can use any name.
+
+The self refers to the current object or variables.
+
+any name
+
+class class_name:
+    Data members
+    member functions(methods)
+    Constructor
+
+ Example:
+ ----------------
+class Test:
+    # member function(methods)
+    def show_message(self):
+        print("Hello i am from class")
+
+    def show(self):
+        print("I am from show")
+
+
+# if i want to access the show_message() method i need to create the object of class.
+
+obj_test = Test()  # here i am creating the object
+obj_test.show_message()
+obj_test.show()
+
+_____________________________________________________________________________________________
+Q. What is mean by constructor in python?
+------------------------------------------------
+- A constructor in python is special method called when an object is created.
+- It is purpose  to assign values to the data members within the class.
+- Every python class has a constructor.
+
+Q. What are the rules for constructor?
+--------------------------------------------------
+1. The constructor method must be named _init_ .
+2. The first argument of the constructor must be self. This is reference to the object itself.
+3. The constructor method must be defined within the class. It can not be defined outside the class.
+4. The constructor automatically called when object of the class is created.
+5. You can define both default constructor and parameterized constructor in class. If you define both
+   the parameterized constructor will be used when you pass arguments to the object.
+
+Example:
+----------------
+class Person:
+    # here i can define the parameterized constructor
+    def _init_(self, name, city, age):
+        # here i can define the data members
+        self.name = name
+        self.city = city
+        self.age = age
+
+    def dispalyData(self): # this is the method
+        print("The name is = ", self.name)
+        print("The city is = ", self.city)
+        print("The age is = ", self.age)
+
+# here i can define the object of the class, When we define the object of the class the constructor will
+# automatically called.
+
+pname = input("Enter the name of the person = ")
+pcity = input("Enter the city name = ")
+page = int(input("Enter the age of the person = "))
+
+obj_person  = Person(pname, pcity, page)
+obj_person.dispalyData()
+
+Example -2:
+-------------------------
+Store 5 Persons data
+# here i can create the list to store the names of the person
+person_lst = []
+
+class Person:
+    def _init_(self, name):
+        self.name = name
+
+    def show(self):
+        print("-------------------------------------------------")
+        for per in person_lst:
+            print("Hello ", per.name)
+
+
+# input 5 persons name
+for i in range(5):
+    name = input(f"Enter the name of Person {i + 1} = ")
+    person_lst.append(Person(name))
+
+# create the object of the class and called show() method.
+obj_per = Person(person_lst)
+obj_per.show()
+
+
+Q. What are the different types of constructor?
+--------------------------------------------------------
+In Python there are 2 types of constructors
+
+1. Default constructors / non-parameterized constructors : A default constructors is constructor that
+   takes no arguments.
+2. Parameterized constructors : A parameterized constructor is constructor that take one or more
+   arguments

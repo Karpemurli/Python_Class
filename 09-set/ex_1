@@ -1,0 +1,11 @@
+#  Write a  Python program to create a set
+demo=set([1,2,3,"murali"])
+demo2={1,2151,1251,"swapnil",1251}
+
+print(demo2)
+
+# print(demo)
+
+# for i in demo,demo2:
+#     print(i)
+

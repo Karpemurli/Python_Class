@@ -1,0 +1,306 @@
+Q. What is mean string?
+-----------------------
+Def : String is the collections of characters.
+    OR
+    The number of characters comes together and create one meaningful word that is called string.
+Example:
+--------
+pen, laptop
+
+Q. how we can declare the string?
+---------------------------------------
+- In python there is no concept of char data type.
+- So, we can declare the string in python by using double quote as well as single quote.
+
+Example:
+--------------
+str_data = "python"
+print(type(str_data))
+
+- String is the immutable type of object means we can not add new element into string, we can not modified the
+  existing string and finally we can't remove the element from string.
+
+- String indexing starts from 0.
+
+Update the string
+--------------------------
+- We can not update the existing string in python when we try to do that the python compiler generate the follwoing
+error message,
+TypeError: 'str' object does not support item assignment
+
+Example:
+-----------
+str_data = "python"
+#suppose i want to update the existing string
+str_data[0] = 'P'
+print(str_data)
+
+delete the string
+-------------------------
+Suppose i want to delete the specific character from the string using python then python not allowed to delete
+specific character from string.It will display the following error,
+
+ Example:
+ ---------------
+str_data = "python"
+
+#suppose i want to delete string.
+del str_data[0]
+print(str_data)
+
+TypeError: 'str' object doesn't support item deletion
+
+We can also apply slicing in string
+--------------------------------------------
+We can get some portion of the string by using the concept called as slicing. The slice operator can be declared
+using square brackets,
+Example :
+
+str_data[start:end:step] --> step is the optional. by default the value of step is 1.
+
+Example:
+------------------
+str_data = "The python is easy to understand"
+print(str_data[0:2:1])
+
+We can also use the membership operator
+---------------------------------------------
+In python there are two types of membership operators are present,
+a) in
+b) not in
+Basically these operator can be used for to check a particular element present in collections or not.
+
+Example:
+-------------
+str_data = "The python is easy to understand"
+print("is" in str_data)
+
+We can also combine more then two string
+---------------------------------------------
+We can use the plus operator to combine more then two string. This is called string concat.
+
+Example:
+-----------
+str1 = "python"
+str2 = " developer"
+print(str1 + str2)
+
+Inbuilt methods of string class
+-------------------------------------
+1. capitalize(): this method convert the first character from first word into uppercase letter.
+Example:
+--------------
+str1 = "python"
+str2 = "python is easy to use"
+print(str1.capitalize())
+
+2. center() :
+---------------
+This method print the characters from left side as well as right side of string. This method required two parameter
+that is
+a) width
+b) fillchar --> it is optional ---> you use it as empty
+
+Example:
+---------
+str1 = "python"
+str2 = "python is easy to use"
+print(str1.center(10,' '))
+
+OR
+str1 = "python"
+str2 = "python is easy to use"
+print(str1.center(10,'*'))
+
+3.title:
+-------------
+This method convert first letter of each word into uppercase.
+Example:
+------------
+str1 = "python"
+str2 = "python is easy to use"
+print(str2.title())
+
+4. upper():
+-------------
+This method convert all lower case words into uppercase.
+Example:
+-------------
+str1 = "python"
+str2 = "python is easy to use"
+str3 = "PYTHON IS EASY TO USE"
+print(str2.upper())
+
+5. lower():
+------------------
+This method convert all uppercase letters into lower case letters.
+Example:
+str1 = "python"
+str2 = "python is easy to use"
+str3 = "PYTHON IS EASY TO USE"
+print(str3.lower())
+
+6. startswith():
+----------------------
+This method check if the string starts with specific character or not. If the string start with specific character then
+it will return True otherwise it will return False.
+Example:
+--------
+str1 = "python"
+str2 = " python is easy to use."
+str3 = "PYTHON IS EASY TO USE"
+print(str2.startswith(' p'))
+
+7. endswith():
+-----------------------
+This method check if the string ends with specific character or not. If the string ends with specific character then
+it will return True otherwise it will return False.
+Example:
+--------
+str1 = "python"
+str2 = "python is easy to use"
+str3 = "PYTHON IS EASY TO USE"
+
+print(str2.endswith('use'))
+
+8. swapcase():
+-------------------------
+This method convert uppercase letter into small case letter and small case letter into upper case letter.
+Example:
+-------------
+str4 = "pythON"
+print(str4.swapcase())
+
+9. count():
+------------------
+This method can be used for to count how many time a particular letter or word present in the whole string. If the string
+not found then it will return 0. If the string found then it will return count number.
+Example:
+---------------
+str2 = "python is easy to use and is easy to learn"
+print(str2.count("is"))
+
+
+10. isupper():
+--------------------
+suppose i want to check the string contains upper case letters or not. If all the words are in upper case then it will
+return true otherwise it return false.
+Example:
+--------------
+str3 = "PYTHON IS EASY To USE"
+print(str3.isupper())
+
+11. islower():
+--------------------
+suppose i want to check the string contains lower case letters or not. If all the words are in lower case then it will
+return true otherwise it return false.
+
+Example:
+--------------
+str2 = "python is easy to use and is easy to learn"
+print(str2.islower())
+
+12. isdigit():
+------------------
+suppose i want to check if the string contains digit or not. If it contains only digit then it will return true otherwise
+it will return false value.
+Example:
+-----------
+str5 = "1234"
+print(str5.isdigit())
+
+13. isdecimal():
+------------------
+The decimal numbers are in between 0 to 9. Suppose i want to check if the string contains number between 0 to 9 then it will
+return true otherwise it will return false.
+
+Example:
+--------------
+str5 = "89777"
+print(str5.isdecimal())
+
+14. isalpha():
+----------------
+The alphabets that is from a to z, if the string contains the alphabets that are in between a to z then it will return
+true otherwise it will return false.
+
+Example:
+------------------
+str5 = "python"
+print(str5.isalpha())
+
+15. replace():
+------------------------
+Suppose i want to replace the old word with new word then i can use the method replace. The replace method accept two
+parameter
+1. old char
+2. new char
+
+Example:
+---------------
+str2 = "python is easy to use and is easy to learn"
+print(str2.replace("python","java"))
+
+16. istitle():
+---------------------
+This method can be used for to check the first letter of each word in capital letter. If it is found then it will return
+true otherwise it will return false value.
+
+Example:
+-----------------
+str2 = "Python Is Easy To Use And Is Easy To Learn"
+print(str2.istitle())
+
+17. find():
+---------------------
+The find method returns the index number of word that you find. It will find the first occurence of word then returns the
+index number. If the word not found then it will return -1.
+
+Example:
+-------------
+str2 = "Python Is Easy To Use And Is Easy To Learn"
+print(str2.find("Easy"))
+
+18. index:
+----------------
+The index method returns the index number of word that you find. It will find the first occurrence of word then returns the
+index number. If the word not found then it will return valueError.
+
+Example:
+--------------
+str2 = "Python Is Easy To Use And Is Easy To Learn"
+print(str2.index("Is"))
+
+19.lstrip(): This method remove the extra white space(blank space) which are present at left side of the string.
+Example:
+--------------
+str5 = "    python"
+print(str5.lstrip())
+
+20. rstrip() :This method remove the extra white space(blank space) which are present at right side of the string.
+
+Example:
+----------------
+str5 = "python     "
+print("before calling rstrip function",len(str5))
+res=str5.rstrip()
+print("After calling rstrip() the length is = ",len(res))
+
+21. strip() : This method remove the blank spaces which are present at both side of the string.
+
+Example:
+--------------------
+str5 = "      python     "
+print(str5.strip())
+
+22. split(): This method divide the string into list with comma separated values.
+
+Example:
+------------------
+str2 = "Python Is Easy To Use And Is Easy To Learn"
+res = str2.split()
+res[0] ="python"
+print(res)
+==============================================================================================================
+
+

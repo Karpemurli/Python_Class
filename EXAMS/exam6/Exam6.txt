@@ -1,0 +1,17 @@
+Python Django Full Stack Aug/Oct- 24
+==================================*
+Solve Any Two
+Time: 3Hrs
+
+1. Online Contact Book
+Description:
+A personal contact management system where users can store and manage names, phone numbers, emails, and addresses. The contacts are searchable and editable. All contact details are stored securely in a MySQL database.
+
+2. Online Library Management System
+Description:
+A web application to manage books in a library. Admins can add, update, or delete books, authors, and genres. Users can register, search for books, check availability, and request a borrow. MySQL stores user details, book inventory.
+
+
+3. Expense Tracker
+ Description:
+A financial tracking tool that allows users to log daily expenses and income. Users can categorize transactions,     view monthly summaries, and set budgets. MySQL handles all financial data and user information.

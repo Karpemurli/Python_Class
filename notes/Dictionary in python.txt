@@ -1,0 +1,65 @@
+Dictionary in python
+-----------------------------
+- Dictionaries are useful data structure for storing the data in python 
+because in dictionary we can store the data in the form of keys and value pair.
+- A python dictionary is a data structure that allows us to easily write very efficient code.
+- The data is stored as key value pair using python dictionary.
+- The dictionary is mutable type.
+- In the dictionary the key must be unique. If the key is duplicated then dictionary will print the latest key value.
+- Values can be of type, integer, list and tuple.
+- key can be of type string or integer. Key can not be of type float.
+
+Creating the dictionary
+------------------------------
+- The dictionary can be created by using the {} curly bracket.
+- The key and the value can be separated by using colon(:).
+Example
+-------------
+dct = {"name":"Ajay","age":22,"mob":9822334455}
+print(dct)
+
+- If you want to print only keys which are present in dictionary then you can use the following code
+Example:
+------------
+dct = {"name":"Ajay","age":22,"mob":9822334455,"city":["Pune","Mumbai","Nashik"]}
+print(dct.keys())
+
+- We also pass the list to keys, the following code shows the use of list in dictionary
+Example
+-----------------
+dct = {"name":"Ajay","age":22,"mob":9822334455,"city":["Pune","Mumbai","Nashik"]}
+
+In above code the city key contains the value in the form of list.
+Example:
+----------
+dct = {"name":"Ajay","age":22,"mob":9822334455,"city":["Pune","Mumbai","Nashik"]}
+print(dct['name'])
+print(dct['mob'])
+print(dct['city'][0])
+
+- In above code we will print the name as Ajay and mob number of ajay by using the keys 'name' and 'mob'.
+- We also print the city of ajay.
+- print(dct['city'][0]) this code says that we print only one city which is present at the index 0 that is Pune.
+- If we want to print two city that is Pune and Mumbai then we can change the statement like,print(dct['city'][0:2]).
+
+
+Suppose we want to print only values which are present in dictionary. Then we can use the pre defined function called values()
+Example:
+---------
+dct = {"name":"Ajay","age":22,"mob":9822334455,"city":["Pune","Mumbai","Nashik"]}
+print(dct.values())
+
+Suppose i want to print both keys and values at a same time, then i can use the predeifined function called items()
+Example:
+--------------
+dct = {"name":"Ajay","age":22,"mob":9822334455,"city":["Pune","Mumbai","Nashik"]}
+for k,v in dct.items():
+    print(k,"------>",v)
+
+output:-
+
+name ------> Ajay
+age ------> 22
+mob ------> 9822334455
+city ------> ['Pune', 'Mumbai', 'Nashik']
+

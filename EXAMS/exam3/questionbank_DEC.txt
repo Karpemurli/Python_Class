@@ -1,0 +1,23 @@
+Instructions: Total:- 06 Marks
+1.Solve any six questions.
+2.Input should be from user.
+3.Indentation and comments mandatory.
+4.Each program 1 Marks.
+
+
+
+1. Develop a program that displays a random quote from a predefined list each time it is run
+
+2. Write a program that takes a user's birthdate as input and calculates their age in years, months, and days.
+
+3. Create a function to generate strong passwords based on user-defined criteria (length, inclusion of numbers, symbols, etc.).
+
+4. Build a program that can perform basic arithmetic operations (addition, subtraction, multiplication, division) using functions.
+
+5. Create a function that counts the occurrences of each word in a given string. Example: word_count("hello world hello") → {'hello': 2, 'world': 1}
+.
+6. Write a function that returns the first n numbers in the Fibonacci sequence. Example: fibonacci(5) → [0, 1, 1, 2, 3].
+
+7. Develop a function to check if two strings are anagrams. Example: is_anagram("listen", "silent") → True.
+
+8. Write a program that generates random names by combining a list of first names and last names.

@@ -1,0 +1,189 @@
+Functions in python
+------------------------------
+- A function is similar to a programs that consist of group of statements that are used to perform specific task.
+- The main purpose of function is to perform a specific task or work.
+- There are several in built functions present in python that perform specific task, example print(), sqrt(), id(), range()
+- Similar to these functions a programmer can also create his own function which are called as user defined functions.
+
+What are the advantages of functions
+-----------------------------------------------
+1. Functions are important in programming language because they are used to process the data, make calculations or perform any
+   task which is required in the software development.
+2. Once a function is written it can be reused as and when required, so function is also called reusable code. It means it is
+   possible to avoid same code again and again.
+3. code maintenance will become easy because of functions.
+4. The use of functions in a program will reduce the length of the program.
+
+
+How we can define the function
+---------------------------------------------
+1. We can define the function using the keyword def followed by function name.
+
+Example:
+----------------
+def sum(num1,num2):
+    result = num1 + num2
+    print("Result = ", result)
+
+def sub(num1, num2):
+    result = num1 - num2
+    print("Sub = ",result)
+
+
+sub(5,3)
+sub(8,7)
+sub(9,2)
+
+sum(10,20)
+sum(7,8)
+sum(8,9)
+
+Example -2
+------------------
+def sub(num1, num2):
+    result = num1 - num2
+    return result
+
+# The above function returns the result to the main function.
+res = sub(5,3) # here we get result as 2
+print(res) # here we print the result.
+
+
+Function returns multiple values:
+-----------------------------------------------
+- A function returns a single value in the programming languages like c, c++ and java.
+- But, in python a function can return single value as well as multiple value.
+
+Example:
+===============
+def DoTask(num1, num2):
+    add_result = num1 + num2
+    sub_result = num1 - num2
+    mul_result = num1 * num2
+
+    return add_result, sub_result, mul_result
+
+num1 = int(input("Enter num1 = "))
+num2 = int(input("Enter num2 = "))
+
+add,sub,mul = DoTask(num1,num2)# here we call the function
+
+print("The addition is = ", add)
+print("The subtraction is = ", sub)
+print("The mul is = ", mul)
+
+Default arguments:
+=========================================================================
+- We can mention some default value for the function parameters in the definition.
+
+Example:
+------------------
+def grocery(item,price=40.00):
+    print("Item = %s" %item)
+    print("Price = %.2f" %price)
+
+#function calling
+grocery(item="sugar",price=50)
+grocery(item="Oil")
+
+- Here, the first argument is item whose default value is not mentioned. But the second argument is price and its default value
+  is mentioned to be 40.
+- At the time of calling the function,this function if we don't pass any value to price then the default value will be set as 40.
+- If the value mention the price value then that mentioned value is utilized.
+- So, a default argument is an argument that assumes a default value if the value is not provided in the function call.
+
+
+Keyword arguments
+------------------------------------
+- Keyword arguments are arguments that identify the parameteres by their name.
+- The following example display grocery item and its price can be written as ,
+    def grocery(item,price=40.00):
+
+- At the time of calling the function, we have to pass two values and we can mention which value is for what.
+
+Example:
+=========
+grocery(item="sugar",price=50)
+
+
+Variable lenght of arguments:
+=======================================
+- Sometimes, the programmer does not know how many values a function may receive. In that case the programmer cannot decide how many
+  arguments to be given in the function definition.
+- For example, if the programmer is writing a function to add two values or numbers, he can write:
+    add(a,b):
+
+- But, the user who is using this function may want to use this function to find sum of three numbers. In that case there is chance of
+  user may provide 3 arguments to this function as:
+    add(7,8,5)
+
+- Then the add() function will fail and error will be displayed. If the programmer wants to develop a function that can accept n number
+  of argument that is also possible in python. For this purpose, a variable length argument is used to in the function definition.
+
+- A variable length of argument is an argument that can accept any number of values.
+- The variable length argument is written with a '*' symbol before it in the function definition.
+
+Example:
+-----------------
+def add(*args):
+
+- Variable length of argument has two types
+1. keyword based arguments / dictionary
+2. non keyword based arguments
+
+
+keyword based arguments
+=========================================
+- Python passes variable length non keyword argument to a function using *args but we can not use this to pass keyword arguments.
+- For this problem python has got a solution called **kwargs, it allows us to pass the variable length of keyword argument to the function.
+
+ Example:
+ -----------------------
+def person(**data):
+    for key, value in data.items():
+        # print("{} is {}".format(key, value))
+        print(key,"---------->",value)
+
+
+person(Firstname="Ram", Lastname="Sharma")
+person(Firstname="Suresh", Lastname="Sharma", age=45, city="Pune")
+
+
+
+non keyword based arguments
+=========================================
+- The special syntax *args in function definition is used to pass a variable number of arguments to a function.
+- It is used to pass non keyword based arguments.
+
+Example:
+---------------
+# function to add 3 numbers
+def adder(x,y,z):
+    print("Sum =",x+y+z)
+
+# i am calling the function
+adder(10,12,13)
+# When we run the above function it will print Sum as 35.
+
+# Lets see what happens when we pass more than 3 arguments in the adder function.
+adder(3,4,5,6,7,8,9)
+
+# When we run above function, it will generate the below error
+# Type Error: adder() takes 3 positional arguments but 7 were given
+
+# So we solve the above problem as below,
+
+def adder(*num):
+    sum = 0
+    for i in num:
+        sum = sum + i
+    print("Sum is : ", sum)
+
+
+adder(2, 4)
+adder(3, 4, 5)
+adder(9, 7, 9, 5)
+adder(8, 4, 6, 7, 2, 9, 3)
+
+
+

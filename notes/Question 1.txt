@@ -1,0 +1,67 @@
+Question 1: Find the Largest and Smallest Numbers in a List
+Write a Python program that does the following:
+1.	Accepts a list of integers from the user (input numbers separated by spaces).
+2.	Finds and prints:
+o	The largest number in the list.
+o	The smallest number in the list.
+3.	Ensure the program handles invalid inputs gracefully.
+
+Question 2: Student Grades Classification
+Write a Python program to classify students’ grades based on their scores:
+1.	Accept scores of 5 students as input (0 to 100).
+2.	Use the following classification:
+o	90 and above: Grade A
+o	80–89: Grade B
+o	70–79: Grade C
+o	Below 70: Grade F
+3.	Output each student’s grade in the format: Student 1: Grade B.
+
+
+Question 3: Remove Duplicates from a Tuple
+Write a Python program that does the following:
+1.	Accepts a tuple of integers from the user.
+2.	Converts it into a set to remove duplicates.
+3.	Converts it back into a sorted tuple.
+4.	Prints the original and the modified tuple.
+________________________________________
+Question 4: Sum of Even and Odd Numbers Using Loops
+Write a Python program to calculate the sum of even and odd numbers:
+1.	Accept a range of numbers from the user (e.g., 1 to 100).
+2.	Use a loop to calculate:
+o	The sum of all even numbers in the range.
+o	The sum of all odd numbers in the range.
+3.	Print both results.
+
+
+Question 5: Word Frequency in a Sentence
+Write a Python program to count the frequency of words in a given sentence:
+1.	Accept a sentence from the user.
+2.	Split the sentence into words and count the occurrences of each word.
+3.	Use a dictionary to store the word frequencies.
+4.	Print the word and its frequency in the format: word: frequency.
+________________________________________
+Question 6: Intersection and Union of Sets
+Write a Python program that works with two sets:
+1.	Accept two lists of integers from the user and convert them into sets.
+2.	Perform and print the following operations:
+o	Union of the two sets.
+o	Intersection of the two sets.
+3.	Display the results in a readable format.
+
+
+Question 7: Menu-Driven Program for List Operations
+Write a Python program that presents the user with a menu to perform operations on a list.
+1.	The program should start with an empty list.
+2.	Display the following options in a loop:
+o	1. Add an element to the list
+o	2. Remove an element from the list
+o	3. Display the list
+o	4. Find the sum of all elements in the list
+o	5. Exit
+3.	Perform the selected operation based on the user's input:
+o	For option 1, accept a number from the user and add it
+o	For option 2, accept a number from the user and remove it if it exists in the list. Handle cases where the number is not in the list.
+o	For option 3, display the current state of the list.
+o	For option 4, calculate and print the sum of all elements in the list.
+o	For option 5, exit the program.
+4.	Use a loop to ensure the menu is displayed repeatedly until the user chooses to exit.

@@ -1,0 +1,95 @@
+Python Array
+--------------------
+Def : In python array is a collection of items or elements stored in at contiguous memory location. The idea is to store multiple items of the same data type.
+- Arrays in python must have all elements of same type.
+- Python supports only single dimensional array.
+- If you want use 2D array then we use one library/module called as NumPy.
+
+Q. how we can use array in python?
+------------------------------------
+- If i want to use the array in python first i need to use inbuilt library called as array.
+
+Syntax
+-------------
+name_variable = array_modulename('typecode',[values])
+
+typecode : typecode is nothing but it is data types like int, float, string. The typecode has the value as below,
+a) int ---> i
+b) float ---> f
+c) string ---> u
+d) double --> d
+
+Example -01:
+-------------------
+import array as arr
+
+myArray = arr.array('i',[10,20,40,50,30])
+# by using index we get only one element
+print(myArray[0])
+
+# by using slice operator we get multiple elements
+print(myArray[0:3])
+
+#by using loop conecept we can also print all elements from array
+for i in myArray:
+    print(i)
+
+
+Example -02(change import statement and array declaration)
+--------------------------------------------------------------
+from array import *
+myArray = array('i',[10,20,40,50,30])
+# by using index we get only one element
+print(myArray[0])
+
+# by using slice operator we get multiple elements
+print(myArray[0:3])
+
+#by using loop concept we can also print all elements from array
+for i in myArray:
+    print(i)
+
+
+Example -03(Stored float value)
+----------------------------------
+from array import *  #---> This is called module/library ---> In which multiple classes present
+myArray = array('f',[1.12,5.3,6.8,555])
+
+#by using loop concept we can also print all elements from array
+for i in myArray:
+    print(round(i,2))
+
+
+How we can access the element of array
+---------------------------------------------------
+1. print() method
+2. by using for loop or while loop.
+3. by using index number we can get single element.
+4. by using slicing method we get multiple element.
+
+how to take user input
+------------------------------
+from array import *
+
+#create empty array
+myarray = array('i',[])
+
+how_many_element = int(input("Enter how many elements = "))
+for i in range(0,how_many_element):
+    myarray.append(int(input("Enter the elements = ")))
+
+print("The array elements are below")
+for j in myarray:
+    print(j)
+
+What are the different methods present in array
+--------------------------------------------------------
+1. append() : It adds the element at the end of array.
+2. insert(index, value) : to insert the element at specific location.
+3. count : It determine how many times a particular value present in array.
+4. extend: this method is used with array to add element from another array to the end of the array.
+5. remove(value) : it remove the value which is present in array.
+6. pop() : It remove the last element from array.
+7. pop(index) : It removes the specific index value from array.
+8. reverse() : reverse the order of the elements.
+9. tolist() : convert the array into list.

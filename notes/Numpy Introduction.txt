@@ -1,0 +1,219 @@
+NumPy Introduction
+------------------------
+- NumPy stands for Numerical Python, is open source python library that provides support for large, multi dimensional
+  arrays.
+- It also have a collection of high level mathematical functions to operate on arrays.
+- It was created by Travis Oliphant in 2005.
+
+Q. What is NumPy?
+-----------------------
+- NumPy is a general purpose array processing package.
+- It provides a high performance multi dimensional array object and tools for working with these array.
+- It is open source software.
+
+Q. How to install NumPy?
+----------------------------
+NumPy can be installed by using following command,
+pip install numpy
+
+Q. how we can create single dimensional array using numpy?
+-------------------------------------------------------------
+Example - 01:
+------------------
+import numpy
+
+myarr = numpy.array([10,20,50,60])
+print(myarr)
+
+In above we used array() class to create the an array with 4 element.
+
+Example -02
+--------------------
+from numpy import *
+
+myarr = array([10,20,50,60])
+print(myarr)
+
+Example-03
+----------------------
+import numpy as np
+myarr = np.array([10,20,50,60])
+print(myarr)
+
+Example-04
+------------------------
+import numpy as np
+myarr = np.array([1.2,3.5,6.1,88],int)
+print(myarr)
+
+You can specify the different typecode which is shown as above, int, float, str
+
+Example -05
+------------------------
+we can also store the string as below,
+import numpy as np
+myarr = np.array(["python", "java","javascript"],str)
+print(myarr)
+
+We can also create the array by using arange() function:
+----------------------------------------------------------------
+The arange() function in NumPy is same as range() function. arange() function is used with the following format.
+arange(start, end, step)
+
+Example-01:
+--------------
+from numpy import *
+myArray = arange(10)
+print(myArray)
+
+
+Example-02
+--------------------
+from numpy import *
+myArray = arange(2,11,2)
+print(myArray)
+
+Example -03
+---------------------
+from numpy import *
+myArray = arange(2,11,2)
+print("The array elements are")
+for i in myArray:
+    print(i, end=",")
+
+Mathematical Operations on arrays
+----------------------------------------------
+It is possible to perform various mathematical operations like addition, subtraction, division etc... on the elements of an array.
+
+Examples:
+-----------------
+from numpy import *
+
+myArray = array([10,30,45,67,44],int)
+print("orignal array= ",myArray)
+
+#Arithmetic operations
+print("The addition is = ",myArray + 5)
+print("The subtraction is = ", myArray - 10)
+# print("Square root = ",numpy.sqrt(myArray))
+print("Sin value = ",numpy.pow(myArray,2))
+
+
+NumPy multidimensional array
+------------------------------------
+Multidimensional arrays are a key feature of the NumPy library in Python, allowing you to store and manipulate data in multiple dimensions efficiently. These arrays are often referred to as ndarrays (n-dimensional arrays).
+
+Key Features of NumPy Multidimensional Arrays:
+-------------------------------------------------------
+1.Efficient Storage: Memory-efficient storage for large datasets.
+2.Multi-Dimensional: Support for 1D, 2D, 3D, or higher-dimensional arrays.
+3.Mathematical Operations: Perform element-wise operations, matrix operations, and more.
+4.Indexing and Slicing: Access and modify specific elements or subsets easily.
+
+Creating Multidimensional Arrays
+-------------------------------------
+import numpy as np
+
+# 1D array
+array_1d = np.array([1, 2, 3])
+
+# 2D array
+array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+
+# 3D array
+array_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+
+print("1D Array:\n", array_1d)
+print("2D Array:\n", array_2d)
+print("3D Array:\n", array_3d)
+
+Important Attributes
+--------------------------------
+shape: Returns the dimensions of the array.
+ndim: Returns the number of dimensions.
+size: Returns the total number of elements.
+dtype: Returns the data type of the elements.
+
+print("Shape:", array_2d.shape)  # (2, 3)
+print("Number of dimensions:", array_2d.ndim)  # 2
+print("Size:", array_2d.size)  # 6
+print("Data type:", array_2d.dtype)  # int32 (may vary)
+
+Accessing Elements
+------------------------------
+Access elements using indices or slices:
+
+Example:
+----------------
+# Accessing elements in 2D array
+print(array_2d[0, 1])  # Element at row 0, column 1
+
+# Slicing
+print(array_2d[:, 1])  # Second column: [2, 5]
+print(array_3d[1, :, 1])  # Second "slice", all rows, second column: [6, 8]
+
+user input in multidimensional array
+------------------------------------------
+import numpy as np
+
+rows = int(input("Enter the number of rows = "))
+col = int(input("Enter the number of col = "))
+
+myArr = np.zeros((rows,col), dtype=int) # empty array with 0
+
+print("Enter the element row by row")
+for i in range(rows):
+    for j in range(col):
+        myArr[i,j] = int(input(f"Element at [{i},{j}] = "))
+
+print("\n 2D array is as below")
+print(myArr)
+
+Matrix addition
+------------------------------
+#matrix add operation using 2d array
+import numpy as np
+
+A = np.array(
+    [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9]
+    ]
+)
+
+B = np.array(
+    [
+        [9,8,7],
+        [6,5,4],
+        [3,2,1]
+    ]
+)
+
+# result = A + B
+result = np.add(A,B)
+print("Matrix Addition:\n",result)
+
+**Multidimensional Array**
+--------------------------------
+#this is the example of multi dimensional array
+
+import numpy as np
+
+# 3 X 3 = 9
+myArr = np.array(
+    [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9]
+    ]
+)
+
+#print(myArr)
+#print("Element at [0,1] =",myArr[0,1])
+#print("Row1 = ",myArr[0,:])
+#print("Col1 = ",myArr[0:2,0:3])
+
+for i in range(myArr.shape[0]): #rows
+    for j in range(myArr.shape[1]): #columns
+        print(f"Element at [{i},{j}] is {myArr[i,j]}")

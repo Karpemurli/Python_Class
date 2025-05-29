@@ -1,0 +1,617 @@
+2. Data Types & Control Statements
+-----------------------------------------------------------
+package ---> The collection of .py files.
+module ---> single .py file is called module.
+Q. What is mean by variable?
+-------------------------------------
+1. Variable is a name which is used to refer memory locations.
+2. The memory location is our RAM(Random access memory).
+3. The data which are present on RAM is temporary.
+4. The variables can be used for to store the value for temporary purpose to perform some operations.
+5. In python there is no need to specify the type of variable because python is dynamic typed langauge.
+6. Variable name can be group of letters and digit, but they have to begin with letter or underscore.
+7. It is recommended that variable name should be in lowercase letters.
+Q. how we can declare the variable in python?
+---------------------------------------------------
+1. Python does not bound us to declare the variable before using it in application. It allows us to create variable
+at required time.
+2. When we assign any value to the varibale that variable is automatically declared.
+3. The equal(=) operator is used to assign a value to variable.
+Example:
+------------------
+num1 = 10
+name = "python"
+salary = 4445.44
+Q. how many ways we can assign the value to the variables?
+--------------------------------------------------------------
+a) Assign a single value to multiple variables
+---------------------------------------------------
+Example:
+-----------
+num1 = num2 = num3 = 50
+b) Assign multiple value to the multiple variable
+------------------------------------------------------
+Example:
+--------
+num1, num2, num3 = 20, 45, 55
+print("num1 =", num1)
+print("num2=",num2)
+print("num3 = ", num3)
+Q. What is mean by operators? How many types of operators are present in python?
+--------------------------------------------------------------------------------------
+Def :
+---------
+The operator can be used for to perform the operations on oprands.
+Example:
+-------------
+a = 30
+b = 40
+a - b ---> here a and b is called as oprands.
+- Operator is most important topic in any programming language, also it is called as backbone of any programming language.
+- In python increment and decrement operators are not present.
+- In increment operator we use post increment(a++ --> a = a + 1) and pre increment(++a).
+- In decrement operator we use post decrement(a--) and pre decrement (--a).
+In python there are different types of operators present which is listed below.
+1. Arithmetic operators:
+-----------------------------
+In arithmatic opeartor we use,
+a) + --> Addition operator
+b) - --> subtract operator
+c) * --> multiplication operator
+d) / --> division operator
+e) % --> modulus operator(reminder)
+f) ** --> Exponent operator(power rest to)
+g) // --> floor division --> It return exact integer value.
+Examples:
+------------
+num1 = 20
+num2 = 3
+print("-------Moduls----------")
+# i can use here mod operator / reminder operator
+print(num1 % num2)
+print("-------Exponent----------")
+# i can use here **(exponent)
+print(5 ** 3)
+print(num2 ** 2)
+print("-------floor division----------")
+# i can use here floor division
+print(num1 // num2)
+2. Relational operator/comparision operator:
+------------------------------------------------
+The comparison operator can be used for to compare the value between two oprands or more than
+two oprands.
+The comparsion operator always return True(1) or False(0) result.
+The following are comparison operator,
+a) == --> equals to
+b) != --> not equals to
+c) < --> less then
+d) > --> greater then
+e) <= --> less than equal
+f) >= --> greater than equal
+Examples:
+-------------
+num1 = 44
+num2 = 23
+num3 = 44
+# i can use equals to (==)
+print("----Equals to-----")
+print(num1 == num2)
+print(num1 == num3)
+# i can use not equals to(!=)
+print("----Not Equals to-----")
+print(num1 != num2)
+print(True == False)
+# i can use less than(<)
+print("----less than(<)-----")
+print(num1 < num2)
+print(num2 < num3)
+# i can use greater than(>)
+print("----greater than(<)-----")
+print(num1 > num2)
+print(num2 > num3)
+# i can use greater than(>)
+print("----greater than equal than(<)-----")
+print(num1 >= num3)
+3. Logical Operator:
+--------------------------
+In python we can use two logical operator that are listed below,
+1. and(other programming --> &&)
+-------------------------------------
+If both expression are true, then the condition will be true.
+The following is the truth table of and
+X Y Result
+------------------
+0 0 0
+1 0 0
+0 1 0
+1 1 1
+Examples:
+---------------
+a = 40
+b = 30
+c = 10
+print(a > b and c > b) # False
+print(a > b and b > c) # True
+2. or(other programming --> ||)
+----------------------------------------
+If one of the expression is true, then the condition will be true.
+The truth table of OR is,
+X Y Result
+---------------------
+0 0 0
+1 0 1
+0 1 1
+1 1 1
+Examples:
+-----------------
+a,b,c = 40, 30, 10
+print(a > b or b > c) #true
+print(a < b or b > c) #true
+print(a < b or c > a ) #false
+4. Assignment operator:
+---------------------------
+Q. What is the difference between = and == ?
+--------------------------------------------------
+a = 40
+b = 40
+= --> value assign to the variable
+== --> To check both value are equals(a == b)
+The assignment operator are used to assign value of the right expression to the left operand.
+The following are some assignment operators are listed.
+a) = :- It assign value to the variable.
+b) += (addition assignment operator)
+-----------------------------------------
+Example:
+-------------
+a = 40
+b = 5
+# in shorcut we use
+a += b # --> a = a + b
+print(a)
+c) -= (subtraction assignment operator)
+---------------------------------------------
+Example:
+------------
+a = 40
+b = 5
+# in shorcut we use
+a -= b # --> a = a - b
+print(a)
+d) *= (multiplication assignment operator)
+---------------------------------------------
+Example:
+--------------
+a = 40
+b = 5
+# in shorcut we use
+a *= b # --> a = a * b
+print(a)
+e) /= (division assignment operator)
+---------------------------------------
+Example:
+----------
+a = 40
+b = 5
+# in shorcut we use
+a /= b # --> a = a / b
+print(a)
+f) %= (modulus assignement operator)
+---------------------------------------
+a = 40
+b = 5
+# in shorcut we use
+a %= b # --> a = a % b
+print(a)
+g) **= (exponent assignment operator)
+----------------------------------------
+a = 40
+b = 5
+# in shorcut we use
+a **= b # --> a = a ** b
+print(a)
+5. Bitwise Operator:
+-----------------------------
+- These operators act on indivual bit(0 or 1) of the oprands.
+- We can use bitwise operator directly with integer number. At this case integer number
+converted into binary number.
+Types of bitwise operator
+---------------------------------
+1. Bitwise complement operator(~):
+----------------------------------
+- This operator gives the complement form of given number.
+- This operator symbol is called as tilde.
+- This operator convert 0's into 1's and 1's into 0's.
+- The truth table of complement operator.
+X Y
+---------
+0 1
+1 0
+Example:
+---------------
+If x = 10 then find ~x ?
+- First the integer number converted into binary, so the binary of 10 is 1010.
+- In the complement all the 0 converted into 1 and all 1 converted into 0.
+10 --> 0000 1010
+~x --> 1111 0101
+2. Bitwise AND operator(&)
+----------------------------------
+- This operator perform and operation on the single bits of number.
+- This operator uses the symbol ampersand(&).
+- the truth table for bitwise and operator is,
+X Y Result
+-------------------
+0 0 0
+1 0 0
+0 1 0
+1 1 1
+Example:
+--------------
+if i have the value like
+x = 10
+y = 11
+then find x & y ?
+Solution
+-----------------
+- First integer number converted into binary
+10 --> 0000 1010
+11 --> 0000 1011
+-------------------------
+x & y? -> 0000 1010
+3. Bitwise or operator(|):
+----------------------------------
+- This operator perform an operation on the single bits of number.
+- This operator uses the symbol pipe(|).
+- the truth table for bitwise OR operator is,
+X Y Result
+-----------------
+0 0 0
+1 0 1
+0 1 1
+1 1 1
+Example
+--------------
+if i have two numbers
+x = 10
+y = 11
+find x | y ?
+------------------
+Solution
+--------
+x = 10 --> 1010
+y = 11 --> 1011
+------------------------
+x | y --> 1011
+4. Bitwise xor operator(^)
+-----------------------------
+- This operator performs exclusive or(XOR) operations on the single bits of number.
+- This operator uses the symbol ^(cap, carat,circumflex).
+- The truth table for xor is
+X Y Result
+------------------
+0 0 0
+1 0 1
+0 1 1
+1 1 0
+Example:
+----------------
+i have 2 numbers
+x = 10
+y = 11
+find x ^ y ?
+-----------------------
+solution
+-----------
+x = 10 --> 1010
+y = 11 --> 1011
+---------------------
+x ^ y ? -> 0001
+5. Bitwise left shift (<<):
+-------------------------------------
+The operator shifts the bits of the number towards left a specified number of position.
+The symbol is used for this is << (double less then)
+Example:
+----------------
+If x = 10
+x << 2
+Solution:
+------------
+x --> 0000 1010
+x << 2 ---> First two zero will remove and add the end --> 00101000
+6. Bitwise right shift(>>):
+--------------------------------------
+The operator shifts the bits of the number towards right a specified number of position.
+The symbol is used for this is >> (double greater then)
+Example:
+----------------
+If x = 10
+x >> 2
+Solution:
+------------
+x --> 0000 1010
+x >> 2 ---> Last two bit that is 10 will remove and add at the first two 00 starting --> 00000010
+6. Membership operator:
+-----------------------------
+- Python membership operator are used to check the membership of value inside python data structure.
+- Python data structure includes List, tuple, array, dictionary, set
+- The membership operator has two types.
+a) in
+b) not in
+- If the value is present in data structure then it will return True, otherwise it will return False.
+Examples:
+------------------
+lst = [2,4,56,6,22,11]
+print(6 in lst)
+lst1 = ["python","java","html","javascript"]
+print("python" in lst1)
+lst2 = ["python","java","html","javascript"]
+print("python" not in lst2)
+lst3 = ["python","java","html","javascript"]
+print("python123" not in lst3)
+7. Identity operator:
+-----------------------------
+The identity operator can be used for to check both variable has same the address or different
+address. If they locate at same address then we say that the both variable identical to each
+other.
+There are two types of Identity operators
+a) is
+b) is not
+This operator returns either True or false.
+If we want to print the address of variable then we can use id() function.
+Examples:
+-------------------
+a = 40
+b = 40
+print(a is b)
+print("A =",id(a))
+print("B = ", id(b))
+a = 40
+b = 4
+print(a is not b)
+print("A =",id(a))
+print("B = ", id(b))
+====================================================================================================================
+Control Statements in Python
+----------------------------------
+Conditional statements allow a program to execute different block of code based on certain conditions.
+Python provides several conditional statements as below
+a) if statements
+b) if-else statements
+c) if-elif-else statements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Control Statements in Python
+----------------------------------
+Conditional statements allow a program to execute different block of code based on certain conditions.
+Python provides several conditional statements as below
+a) if statements:
+----------------------------
+The if statement checks the condition, and if it evaluates true, the code inside the block execute.
+
+Syntax:
+------------
+if condition:
+    # code to execute if condition is true.
+
+Example:
+------------
+age = int(input("Enter the age ="))
+
+if age >= 18:
+    print("You are eligible for voting")
+
+
+b) if-else statements:
+----------------------------
+The if-else statement provides an alternative block of code to execute if the condition is False.
+If the condition is true than if block is executed.
+
+Syntax
+---------
+if condition:
+    #code to execute
+else:
+    # code for false block
+
+Example
+---------
+age = int(input("Enter the age ="))
+if age >= 18:
+    print("You are eligible for voting")
+else:
+    print("You are not eligible for voting")
+
+
+
+
+c) if-elif-else statements:
+-----------------------------
+Suppose i have multiple conditions and i want to check the conditions that should be true, from
+multiple conditions only true condition will execute.
+
+Syntax:
+------------
+if condition1:
+    #code to execute
+elif condition2:
+    #code to execute of condition2 is true
+elif condition3:
+     #code to execute of condition3 is true
+else:
+    #code to execute if all conditions are False.
+
+Example:
+-----------
+========================================================================================================================
+Python For Loop:
+------------------
+- Python programming loops are instructions to repeat something multiple times until a specific condition is met.
+- In python there are two types of loop
+    a) for loop
+    b) while loop
+    c) nested loop
+
+while loop:
+--------------
+- Repeats the given statement or group of statement until the given condition is true.
+- The while loop programs in Python test the condition before executing the loop body.
+
+Example:
+------------
+num = 0
+while num <= 10:
+    if num % 2 == 0:
+        print(num)
+    num += 1
+
+  Steps-1:
+  ----------------------
+  1. num = 0
+  2. while num <= 10 ----> 0 <= 10 --> True
+  3. execute the if condition --> 0 % 2 == 0:  --> 0 == 0
+  4. print(num) ---> 0
+  5. num += 1 --> 0 + 1 --> num = 1
+
+   Steps-2:
+  ----------------------
+  1.
+  2. while num <= 10 ----> 1 <= 10 --> True
+  3. execute the if condition --> 1 % 2 == 0:  --> 1 == 0 --> False
+  4. print(num) ---> no number will print
+  5. num = 1 + 1 ==> 2
+
+     Steps-3:
+  ----------------------
+  1.
+  2. while num <= 10 ----> 2 <= 10 --> True
+  3. execute the if condition --> 2 % 2 == 0:  --> 0 == 0 --> True
+  4. print(num) ---> 2
+  5. num = 2 + 1 ==> 3
+
+
+    Steps-4:
+  ----------------------
+  1.
+  2. while num <= 10 ----> 3 <= 10 --> True
+  3. execute the if condition --> 3 % 2 == 0:  --> 1 == 0 --> False
+  4. print(num) ---> no number will print
+  5. num = 3 + 1 ==> 4
+ And so on...........
+
+
+for loop ---> List, tuple, dictionary, array, set ---> data structures
+
+
+1. Write a python program to print entered number is prime or not
+2. Write a python program to print total number of vowels within a string
+    hello python
+==========================================================================================================
+What is mean by break, continue and pass keyword in python?
+-----------------------------------------------------------------------------
+
+The break statement:
+--------------------------
+- The break statement can be used inside while loop and for loop to come out of the loop.
+- When break is executed, the python interpreter jump out of the loop to process the next statements in the program
+
+Example:
+-------------
+for i in range(10,0,-1):
+    if i == 5:
+        break
+    print(i)
+
+ Continue keyword:
+ ----------------------
+- The continue keyword is used in loop to go back to the begining of the loop.
+- The continue statement when executed, the next repeatition will be start.
+
+Example:
+--------------
+count = 0
+for i in range(10,0,-1):
+    if i == 5:
+        continue
+    count = count + 1
+    print(i)
+print("The count of number is = ",count)
+
+Real time example of break statement
+---------------------------------------
+correct_pin = 1234
+attempts = 3
+
+while attempts > 0:
+    pin = int(input("Enter the correct = "))
+    if pin == correct_pin:
+        print("Access Granted")
+        break
+    else:
+        attempts = attempts -1
+        print("Incorrect pin Attempt left :",attempts)
+    if attempts == 0:
+        print("Your account will be lock for 24hrs")
+
+
+pass keyword:
+-------------------
+- The pass keyword does not do anything.
+- In python there is some rules when define the function and method the function and method dose not
+  contains empty declrations. We just type pass.
+
+Example:
+-----------
+def add():
+    pass
+add()
+
+
+============================================================================================================
+Q. What is mean by match case in python?
+----------------------------------------------
+'''
+1 --> Monday
+2 --> Tuesday
+3 --> Wensd
+
+'''
+days = input("Enter the days number between 1 to 7 = ")
+match days:
+    case '+':
+        print("This is Monday")
+
+    case '2':
+        print("This is Tuesday")
+    case '3':
+        print("This wensd")
+    case _:
+        print("Invalid number. Please enter number between 1 to 7")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

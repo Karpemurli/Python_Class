@@ -1,0 +1,182 @@
+Python List
+-------------------------
+Q. What is List?
+--------------
+Def : List can be used to store the different type of data element into a single variable.
+
+Q. How we can declare the list?
+------------------------------
+- In python we can declare the list using the square bracket [].
+- In python the list is mutable type of element.
+- So, we can add the new element into list, update the existing element from list and delete the elements from the list.
+Example:
+--------------
+lst = [1,2,5,6,3,4]
+for i in lst:
+     print(i)
+
+
+Basic operations on the list
+-------------------------------------
+1. concat: We combine two or more list into single list.
+
+Example:
+-----------------
+lst1 = [1,2,3]
+lst2 = [4,5,6]
+print(lst1 + lst2)
+
+
+2. Repetition operator
+----------------------------
+How many times the list will printed. This operator indicated by using *.
+
+Example:
+---------------
+lst1 = [1,2,3]
+lst2 = [4,5,6]
+print(lst1 * 2)
+
+3. slice operator:
+---------------------
+If i want to print the data in between the range.Slice operator. The slice operator can be indicted by [start:end:step].
+
+Example:
+----------------
+lst = [1,2,5,6,3,4]
+print(lst[0:4])
+
+or negative indexing
+-----
+print(lst[-5:-1])
+
+4. membership operator:
+---------------------------
+1. in
+2. not in
+
+Q. how you can say that, list is mutable?
+-----------------------------------------------
+We can say that the list is mutable because we can easily add new element into list, we can easily update the existing
+data from list and we delete the data also.
+
+Example:
+-------------
+lst1 = [1,2,3]
+lst1.append(100)
+lst1.append(200)
+print(lst1) # this method add the new element into list which has the last location.
+
+# i want to remove the element
+del lst1[0]
+print(lst1)
+
+#updation
+lst1[1] = 300
+print(lst1)
+
+
+Q. how you can take userinput into list?
+----------------------------------------------
+Example:
+--------------
+#empty list
+
+lst = []
+how_many_element = int(input("Enter how many element you want to add = "))
+for i in range(0,how_many_element):
+    lst.append(int(input("Enter the elements = ")))
+
+
+print("The list elements are")
+for j in lst:
+    print(j)
+
+Q. What are the different methods present in List?
+----------------------------------------------------
+1. append(): Used for adding elements to the end of List.
+
+Example:
+-----------
+lst = [4,7,8,94,6]
+lst.append(100)
+lst.append(200)
+print(lst)
+
+2. copy(): This method copy the element from one list to another list.
+Example:
+-----------
+lst1 = [4,7,8,94,6]
+lst2 = [8,2,4,1,9]
+lst3 = []
+lst3 = lst1.copy()
+
+3. extend(): Add the elements of a list to the end of the current list.
+
+Example:
+----------------
+lst1 = [4,7,8,94,6]
+lst2 = [8,2,4,1,9]
+
+lst2.extend(lst1)
+print(lst2)
+
+
+4. insert(): Adds the element at the specified location.
+Example:
+-------------
+lst1 = [4,7,8,94,6]
+lst2 = [8,2,4,1,9]
+
+lst2.insert(2, 100)
+print(lst2)
+
+5. pop(): Remove the element which are present at the end of the list.
+ Example:
+ --------------
+lst1 = [4,7,8,94,6]
+lst2 = [8,2,4,1,9]
+
+lst2.pop()
+lst2.pop()
+print(lst2)
+
+6. pop(index): This method remove element which are present at specified locatiion
+Example:
+---------------
+lst1 = [4,7,8,94,6]
+lst2 = [8,2,4,1,9]
+
+lst2.pop(0)
+print(lst2)
+
+7. remove():Removes the first item with specified value.
+
+Example
+--------------------------
+lst1 = [4,7,8,94,6]
+lst2 = [8,2,4,1,9]
+
+lst2.remove(2)
+print(lst2)
+
+8. reverse(): It print the element in reverse order.
+Example:
+-------------
+lst1 = [4,7,8,94,6]
+lst2 = [8,2,4,1,9]
+
+lst1.reverse()
+print(lst1)
+
+9. sort(): Sort the element in asc or desc order. By default it will sort in asc order.
+Example:
+--------
+lst1 = [4,7,8,94,6,2,1]
+lst1.sort(reverse=True)
+
+print(lst1)
+
+10. clear():All clear list
+--------------------------------------------------------------------------------------------------------------------
+=============

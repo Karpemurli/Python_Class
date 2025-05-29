@@ -1,0 +1,74 @@
+1. Write a program that prompts the user to input a number and display if the number is even or odd.
+2. Write a Python program that takes an age as input and determines whether a person is eligible to vote. If the age is 18 or above, print "You are eligible to vote." Otherwise, print "You are not eligible to vote yet."
+3. Write a program that prompts the user to input two integers and outputs the largest.
+4. Write a program that prompts the user to enter a number and determines whether it is positive, negative, or zero. The program should print "Positive" if the number is greater than 0, "Negative" if the number is less than 0, and "Zero" if the number is 0.
+5. Write a program that prompts the user to enter their age and prints the corresponding age group. The program should use the following age groups:
+
+0-12: 		Child
+13-19: 		Teenager
+20-59: 		Adult
+60 and above: 	Senior Citizen
+
+6. Write a program that prompts the user to input a number from 1 to 7. The program should display the corresponding day for the given number. For example, if the user types 1, the output should be Sunday. If the user types 7, the output should be Saturday. If the number is not between 1 to 7 user should get error message as shown in sample output.
+
+7. Write a program that prompts the user to enter their weight (in kilograms) and height (in meters). The program should calculate the Body Mass Index (BMI) using the formula: BMI = weight / (height * height). The program should then classify the BMI into one of the following categories:
+
+less than 18.5 - Underweight		
+BMI between 18.5 and 24.9 - Normal weight 	
+BMI between 25 and 29.9 - Overweight		
+BMI 30 or greater - Obesity
+
+8. The marks obtained by a student in 3 different subjects are input by the user. Your program should calculate the average of subjects and display the grade. The student gets a grade as per the following rules:
+
+Average	Grade
+90-100	A
+80-89	B
+70-79	C
+60-69	D
+0-59	F
+
+9. Write a program that prompts the user to input a character and determine the character is vowel or consonant.
+
+10.Write a program that prompts the user to input number of calls and calculate the monthly telephone bills as per the following rule:
+Minimum Rs. 200 for up to 100 calls.
+Plus Rs. 0.60 per call for next 50 calls.
+Plus Rs. 0.50 per call for next 50 calls.
+Plus Rs. 0.40 per call for any call beyond 200 calls.
+
+11. Write a program that prompts the user to input a year and determines whether the year is a leap year or not. Leap years are any years that can be evenly divided by 4. A year that is evenly divisible by 100 is a leap year only if it is also evenly divisible by 400.
+
+12. Write a python program to check the number is divisible by 7.
+
+13.Q8. Write a program to calculate the electricity bill (accept number of unit from user) according to the following criteria :
+             Unit                                                     Price  
+First 100 units                                               no charge
+Next 100 units                                              Rs 5 per unit
+After 200 units                                             Rs 10 per unit
+(For example if input unit is 350 than total bill amount is Rs2000)
+
+14. Write a program to check whether the last digit of a number( entered by user ) is divisible by 3 or not.
+
+15. Write a program to accept percentage from the user and display the grade according to the following criteria:
+
+         Marks                                    Grade
+         > 90                                         A
+         > 80 and <= 90                        B
+         >= 60 and <= 80                      C
+         below 60                                  D
+
+16.  Write a program to accept the cost price of a bike and display the road tax to be paid according to the following criteria :
+    
+        Cost price (in Rs)                                    Tax
+        > 100000                                                  15 %
+        > 50000 and <= 100000                            10%
+        <= 50000                                                   5%
+
+17.Write a program to check whether a number entered is three digit number or not.
+
+
+
+19. A company decided to give bonus to employee according to following criteria:
+    Time period of Service                           Bonus
+    More than 10 years                                   10%
+    >=6 and <=10                                             8%
+    Less than 6 years                                      5%

@@ -1,0 +1,235 @@
+Python Set
+----------------
+Q.What is mean by set?
+- A python set is the collection of unordered elements.
+- Each element in the set must be unique, immutable.
+- Sets are mutable which means we can modify it after its creation.
+- We can not directly access any element of the set by the index. We can get the list of elements by looping through the set.
+
+How we can create the set?
+- The set can be created by enclosing the comma separated immutable elements with the curely bracket.
+- Python also provides the set() method which can be used to create the set.
+
+Example
+-----------------
+days = {"monday","tuesday","wend"}
+print(days)
+
+#we can also print the element of the set by using loop
+for i in days:
+    print(i)
+
+#We can also create the set by using inbuilt function set().
+days = set(["mon","tue","wensd"])
+for i in days:
+    print(i)
+
+#set can accept only immutable elements, if we try to insert mutable element into set then it will through error.
+numbers = {1, 2, 3, 1, 3, "python", ["javascript",44,66]}
+for i in numbers:
+    print(i)
+
+Q. How we can add the element into set?
+----------------------------------------------
+- Python provides the add() method and update() method which can be used to add some particular element to the set.
+- The add() method is used to add single element into the set whereas the update() method used to add multiple element
+  into the set.
+
+Example
+------------------
+# by using add() method
+months = set(["jan","feb","march"])
+months.add("apr")
+months.add("may")
+for i in months:
+    print(i)
+
+#by using update() method
+months = set(["jan","feb","march"])
+months.update(["apr","may","june"])
+for i in months:
+    print(i)
+
+How we can remove the element from set?
+-----------------------------------------------
+- Python provides the discard() method and remove() method which can be used to remove the element from the set.
+- The difference between these functions is that, using discard() method if the element does not exist in the set then
+  the set remain unchanged whereas remove() will through the error.
+
+Example
+----------------
+#by using discard()
+months = set(["jan","feb","march"])
+months.discard("may")
+for i in months:
+    print(i)
+
+#by using remove()
+months = set(["jan","feb","march"])
+months.remove("may")
+for i in months:
+    print(i)
+
+Q. What is the difference between discard() and remove() method?
+Q. What are the different operations perform on set?
+---------------------------------------------------------
+Set can be performed mathematical operation such as union, intersection, difference and symmetric difference.
+
+1. Union of two Sets:
+-----------------------------
+- To combine two or more sets into one set in python is called as Union of two sets.
+- Python, use the union() function.
+- All of the distinctive element from each combined set are present in final set.
+- As parameters one or more sets may be passed to the union() function.
+- You can use the union in two ways,
+    a) union() function
+    b) | this is called union operator.
+
+Example-1:
+----------------
+days1 = {"mon","tue","fri","tue","sun",[]}
+days2 = {"fri","sat","sun"}
+
+print(days1.union(days2))
+
+Example-2
+---------------
+days1 = {"mon","tue","fri","tue","sun"}
+days2 = {"fri","sat","sun"}
+
+print(days1 | days2)
+
+Q. How to find common element between three set.
+-------------------------------------------------------
+s1 = {1,2,3}
+s2 = {2,3,4}
+s3 = {3,4,5}
+
+common_element = s1.union(s2,s3)
+print(common_element)
+
+
+2. Intersection of two sets
+-----------------------------------
+- To find what is common between two or more sets in python, apply the intersection() function.
+- Only the items in all sets being compared are included in final set.
+- One or more sets can be also be used as the intersection() function parameter.
+- We can use the intersection() function in two ways,
+    a) intersection() function
+    b) & --> this is called and operator.
+
+Example -1:
+-------------
+days1 = {"mon","tue","fri","tue","sun"}
+days2 = {"fri","sat","sun"}
+print(days1.intersection(days2))
+
+Example -2
+-------------
+days1 = {"mon","tue","fri","tue","sun"}
+days2 = {"fri","sat","sun"}
+print(days1 & days2)
+
+
+3.Intersection_update() method
+--------------------------------------
+- The intersection_update() method removes the element from original set that are not present in both the sets.
+
+Example
+-----------
+s1 = {1,2,3,4,5}
+s2 = {3,4,5,6,7}
+s1.intersection_update(s2)
+print(s1)
+
+o/p : {3, 4, 5}
+
+Q.What is the difference between intersection() function and intersection_update() function?
+
+
+4. difference between two sets:
+--------------------------------
+- The difference of two sets can be calculated by using the subtraction operator(-) as well as using difference() method.
+- suppose there are two sets A and B, and the difference is A-B that denotes the resulting set will be obtained that element of A,
+  which is not present set B.
+
+ Example-1
+ ------------
+s1 = {1,2,3,4,5}
+s2 = {3,4,5,6,7}
+print(s1-s2)
+
+o/p : {1,2}
+
+Example-2
+-----------
+s1 = {1,2,3,4,5}
+s2 = {3,4,5,6,7}
+print(s1.difference(s2))
+
+5. Symmetric_difference between two sets
+----------------------------------------------
+- The symmetric difference between set1 and set2 is the set of elements present in one set or the other set but not in bot set.
+- We can use the method symmetric_difference() for this operation or we can use ^ cap operator.
+
+
+Example-1:
+------------
+s1 = {1,2,3,4,5,6}
+s2 = {1,2,9,8,10}
+res = s1 ^ s2
+print(res)
+
+o/p:
+----
+{3, 4, 5, 6, 8, 9, 10}
+
+Example -2
+-----------------
+s1 = {1,2,3,4,5,6}
+s2 = {1,2,9,8,10}
+res = s1.symmetric_difference(s2)
+print(res)
+
+
+Set Comparisons
+------------------------
+- In python you can compare sets to check if they are equal or of two sets have the common elements or if one set
+ is subset another, for this operation set comparison operator are present in python.
+
+- The following are some set comparision operator are present.
+1. ==  :- check if two sets have the same element.
+Example:
+---------------
+s1 = {1,2,}
+s2 = {True,2}
+print(s1 == s2)
+
+2. !=  :- Checks if two sets are not equal.
+Example:
+----------------
+s1 = {1,2,3,5}
+s2 = {True,2,3}
+print(s1 != s2)
+
+
+3. <   :- checks if the left set is proper subset of the right set.(all elements in the left set are also
+          present in right set, but the right set has additional element)
+Example:
+-----------------------
+s1 = {"Mon","Tue","Wend","Thu"}
+s2 = {"Mon","Tue"}
+print(s1 < s2)
+
+o/p : false
+
+4. >   :- checks if the left set is proper subset of the right set.(all elements in the right set are also
+          present in left set, but the left set has additional element)
+Example:
+----------------
+s1 = {"Mon","Tue","Wend","Thu"}
+s2 = {"Mon","Tue"}
+print(s1 > s2)
+
+
+o/p : True

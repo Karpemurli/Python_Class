@@ -1,0 +1,93 @@
+Exception handling in python
+------------------------------
+Def Exception :
+-------------
+Exception is unwanted error that are occure due to the mistake of developers. It always comes when your program is
+running.
+
+- Error in python can be of two types that is Syntax error and Exceptions.
+- Error are problems in program due to which the program will stop the execution.
+- To handle the exception python uses the keywords like try and except block.
+
+What are the different types of exceptions in python:
+----------------------------------------------------------
+In python, there are several built in python exceptions that can be raised when error occurs during the execution of
+a program.
+1) SyntaxError:
+-----------------
+    - This exception is raised when the interpreter encounters a syntax error in the code.
+    - Such as a misspelled keyword, missing colon etc...
+2) TypeError:
+-----------------
+    - Raised when operation or function is applied to an object of an inappropriate type.
+    Example:
+    ----------------
+    print("abc" + 136)
+
+3) ValueError:
+-----------------------
+    - Raised when a function receives an argument of the correct type but inappropriate value.
+    Example:
+    ---------
+    print(int("abc"))
+
+4) IndexError:
+-------------------
+    - Raised when trying to access an index the is out of range.
+    Example:
+    -------------
+    lst = [1,2,3,4,5]
+    print(lst[7])
+
+5) KeyError:
+---------------
+    - Raised when trying to access a key that does not exist in a dictionary.
+    Example:
+    ---------
+    d = {"city":"Pune"}
+    print(d["name"])
+
+6) AttributeError:
+-------------------
+    - Raised when an object does not have the specified attribute.
+    Example:
+    ----------
+        lst = [1,2,3,4,5]
+        lst.appendd(100) # here i am writing wrong method
+        print(lst)
+
+7) FileNotFoundError:
+------------------------
+    - Raised when a file operations because the file does not exist.
+    Example:
+    ------------
+        open(r"D:\test1.txt","r")
+    In above statement i am looking for the file test1.txt on the D drive, but this type of file does not exists on that
+    drive, so it will generate the exception FileNotFoundError: [Errno 2] No such file or directory: 'D:\\test1.txt'.
+
+8) IndentationError:
+-----------------------
+    Raised when the code is not properly aligned.
+    Example:
+    --------
+    def printData():
+    print("Welcome")
+
+8) IOError(input/output error):
+--------------------------------
+    - This exception is raised when an I/O operation, such as reading or writing a file fails due to an input/output error.
+
+9) ImportError/ ModuleNotFoundError:
+--------------------------------------
+    - Raised when an import statement fails.
+    Example:
+    ------------
+    import arrays ---> arrays module not present. The correct module name is array
+
+
+10) ZeroDivisionError:
+-----------------------
+    - This exception is raised when an attempt is made to divide a number by zero.
+
+Q. What is the difference between Syntax Error and Exception
+

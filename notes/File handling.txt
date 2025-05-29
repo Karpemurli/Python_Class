@@ -1,0 +1,110 @@
+File handling
+------------------
+- Users can easily handle the files, like read, and write the files in python.
+- In other programming language the file handling process is lengthy and complicated.
+- But we know python is an easy programming language. So like other programming language the file handling is very easy.
+- Sometimes it is not enough to only display the data on the console. The data to be displayed may be very large and only
+  limited amount data can be displayed on the console.
+- The file handling plays an important role when data needs to be stored permanently into a file.
+- In python files are treated in two modes text and other is binary mode.
+
+Q. How we can create file in python?
+-----------------------------------------
+a) Create a file in the current directory or specified directory.
+b) Create a file if not exist.
+c) Create a file with date and time as its name.
+
+Syntax:
+----------
+open(file_path, access_mode)
+
+- Access mode specifies the purpose of opening file.
+- Below is the list of access modes for creating a file.
+
+File Mode               Meaning
+------------------------------------------------------------------
+1. w                    Create a new file for writing. If a file already exist
+                        it truncates the file first.
+2. r                    This mode can be used for to read the file data.
+3. a                    Open a file in the append mode and add new content at the end of the file.
+
+Q. How we can create empty file?
+---------------------------------------
+Example:
+--------------
+fp = open(r'E:\python_aug\test.txt', 'w')
+fp.close()
+
+- In above example we create file in the location E:\python_aug folder.
+- In above example we write 'r' because if not use r then in file path we write \text.txt so \t
+  python considered as tab to avoid this we can use 'r' that indicated it is raw path.
+
+Q. how we can write the data into a file?
+--------------------------------------------
+- We can write the data into a file we use the function called as write() function.
+Example:
+-----------
+
+with open(r"D:\python\14-File handling\text.txt","a") as fp:
+    fp.write("\n murali is name....")
+
+Q. How we can check if file exist at given location.
+---------------------------------------------------------
+- Sometimes it is important not to create a fileif file with same name aleady exists in the given path.
+- By default when you open file in write mode, it overwrites if it exist.
+- We can create the file only if it is not present using following way,
+    Use os.path.exists('filename')
+
+Q. How we can take user input to create a file?
+-----------------------------------------------------
+import os
+
+#r"E:\python_aug\test1.txt"
+file_path = r"E:/python_aug/"
+file_name = input("Enter the name of the file = ")
+complete_path = file_path+""+file_name
+print("The path is = ",complete_path)
+if os.path.exists(complete_path):
+    print("Already exists")
+else:
+    with open(complete_path,"a") as fp:
+        fp.write("File contents are stored")
+
+Q. how to create a file with datetime as a filename?
+----------------------------------------------------------
+from datetime import datetime
+
+# first we print current date and time
+curr_dt = datetime.now()
+
+# If i want to convert this datetime into a python string then we use strftime() function
+file_name = r"E:/python_aug/" + curr_dt.strftime('%Y-%m-%d-%H-%M-%S.txt')
+with open(file_name, "a") as fp:
+    fp.write("Python is very easy programming language")
+    print("Created", file_name)
+-------------------------------------------------------------------------------------------------------
+Q. how we can read the file contents?
+--------------------------------------
+Suppose we want to read the contents of the file line by line then we use predefined function called
+read() function.
+
+Example:
+------------------
+try:
+    fp = open(r"E:\python_aug\test.txt","r")
+    print(fp.read())
+    fp.close()
+except FileNotFoundError:
+    print("Please check the path")
+
+
+- The readLines() function can be used to convert file content into a list.
+
+Example:
+-------------
+try:
+    fp = open(r"E:\python_aug\test.txt","r")
+    print(fp.readlines())
+    fp.close()
+except FileNotFoundError:
+    print("Please check the path")

@@ -1,0 +1,310 @@
+Threading
+-----------
+What is mean by Thread?
+-----------------------------
+- The process of executing multiple task/job simultaneously is called multi threading in python.
+- In other word the ability of cpu(processor) to execute multiple task concurrently is called multi threading
+
+Example:
+------------
+Lets understand it with the help of real time example. A super busy mom does multiple task simultaneously, such as
+cooking food, taking care of baby, attending phone calls, watching serial. She is doing all the task simultaneously.
+
+
+In this scenario the busy mom represents(CPU) and the task she is performing concurrently represents individual threads
+within the single process.
+
+Multi threading is used in many application programs to improve performance and scalability by running multiple task
+simultaneously, for example web server uses more than one thread to handle multiple request at the same time. It imporve
+the performance of the web server it can process multiple request at once.
+
+
+Q. What is a Thread in Python?
+-------------------------------------
+In Python, or any other programming languages, a thread simply refers to the basic unit of execution within a computer program.
+A computer program is a process that has at least one thread, known as main thread, to execute instructions of that process.
+
+Q. Single-Threaded Program and Multi-threaded Program?
+-------------------------------------------------------
+When a program contains a single flow of execution, it is called single-threaded program. In a single thread program,
+instructions are executed one after the other sequentially. It means that a single-threaded program executes one task
+at a time.
+
+We can also create more than one execution thread in a program to perform multiple tasks simultaneously. When a program
+creates more than one thread, with each thread having its own path of execution, the program is referred to as
+a multi-threaded program.
+
+In such a program, threads run concurrently and perform multiple tasks at the same time, thus improving its
+performance and efficiency. Each thread within the program runs in parallel with other threads, meaning that
+all threads are working at the same time on different tasks.
+
+In multi-threaded program, threads can be independent or they can share resources, such as the same memory address, data,
+and instructions in the program. Threads can also communicate with each other and share resources using synchronization
+techniques.
+
+Q. Thread Control Block (TCB) in Python?
+-----------------------------------------
+All the related information of each thread is stored as a data structure inside the operating system kernel, and this
+data structure is called thread control block (TCB). The TCB contains the following main components that are as:
+
+Program counter (PC): This component is used to track the execution flow of the program. The program counter stores the
+address of the instruction currently being executed by a thread.
+
+System registers (REG): These registers are temporary storage areas that hold the current working variables and other
+critical data needed by the thread during execution.
+
+Stack: The stack is a data structure that stores a record of the execution history or the call history of the thread.
+
+The thread Identifier is a unique identifier assigned to every new thread, allowing the operating system and the
+application to distinguish between different threads within the same process or across different processes.
+
+The thread state signifies the current status of a thread within its lifecycle, such as running, ready, waiting, start,
+or stopped.
+
+Creating threads in Python
+--------------------------------
+Python provides thread class of threading module that is useful to create threats. To create our own thread we are
+supposed to create and object of thread class the following are the different ways of creating our own threats in Python.
+
+1. Creating thread without using class:
+-----------------------------------------------
+The purpose of thread is to execute a group of statement like a function. So we can create a thread by creating an
+object of thread class and pass the function name as target for the thread as:
+
+t = Thread(target= functionName, [args=(arg1,arg2....)])
+
+Here we are creating the thread class object t that represent our thread. The target represent the function on which
+the thread will act. args represent a tuple of arguments which are passed through the function. It should be started
+by calling the start() as:
+t.start()
+The following example shows,
+-------------------------------
+from threading import *
+import time
+from time import sleep
+
+
+# create the functions
+def printEven():
+    for i in range(11):
+        if i % 2 == 0:
+            print("Even = ",i)
+            sleep(1)
+
+def printOdd():
+    for i in range(10):
+        if i % 2 == 1:
+            print("Odd = ",i)
+            sleep(1)
+
+# calculate the start time
+start_time = time.time()
+
+# creating the object of thread class
+t1 = Thread(target=printEven)
+t2 = Thread(target=printOdd)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+end_time = time.time()
+final_time =  end_time - start_time
+print(f"Total Execution Time = {final_time:.2f} seconds")
+
+
+2. Creating a thread by creating a subclass to thread class:
+-----------------------------------------------------------------
+since the thread class is already created by by the Python people in threading module, we can make our class as a subclass
+to thread class so that we can in a rate the functionality of the threat class. This can be done by writing the following
+statement.
+
+class MyThread(Thread):
+
+Here MyThread represent the subclass of Thread class. Now any method of thread class are also available to our sub class.
+The thread class has the run method which is also available to our subclass. The speciality of the run method is that
+every thread with run this method when it is started.
+
+The next step is to create the object of MyThread class which contains a copy of the super class that is Thread class.
+
+t1 = MyThread()
+
+In about example t1 is the object of my thread class which represent our thread now we can run by calling the start
+method of MyThread class and execute the code available inside it. Many times it is better to wait for the completion
+of thread by calling the join method of the thread as:
+t1.join()
+
+This will wait till the thread completely executes the run method. A thread will terminate automatically when it comes
+out of the run method.
+
+Example
+-----------
+from threading import *
+
+class MyThread(Thread):
+    #override run() method which is present in Thread class
+    def run(self):
+        for i in  range(1,11):
+            print(i)
+
+class MyThread2(Thread):
+    def run(self):
+        for i in range(1, 5):
+            print(i)
+
+#creating object of MyThread class
+
+t1 = MyThread()
+t2 = MyThread2()
+
+t1.start()
+t1.join()
+
+t2.start()
+t2.join()
+
+
+3. Creating a thread without creating subclass to thread class:
+-------------------------------------------------------------------
+You can create an independent class say MyThread that does not inherit from thread class. Then we can create an
+object obj to MyThread class.
+obj = MyThread('hello')
+
+The next step is to create a thread by creating and object to Thread class and specifying the method of the MyThread
+class as it is target as:
+
+t1 = Thread(target=obj.display, args=(1,2))
+
+Here t1 is our thread which is created as an object of thread class. Target represent the display method of object
+obj args represents a tuple of values passed to the method.
+
+Example:
+------------
+from threading import *
+class MyThread:
+    def _init_(self,str):
+        self.str = str
+
+    # define one method
+    def display(self, n1,n2):
+        print(self.str)
+        print("print value = ",n1,n2)
+
+#create the object of MyThread class
+obj = MyThread("Hello my values")
+
+t1 = Thread(target=obj.display, args=(1,2))
+t1.start()
+
+Thread class methods
+--------------------------
+Let's first have a look at the method and properties available in thread class and their description.
+1. t.start():
+-----------------
+Start the thread. It must be called at most Once per thread object.
+
+2. t.join([timeout]):
+-----------------------------
+waits until the thread terminate or a timeout occurs. Timeout is a floating point number specifying a time out for
+the operation in a second.
+
+3. t.is_alive():Returns true if the thread is alive in a memory and false otherwise.
+4. t.setName(name): gives a name to the thread.
+5. t.getName() : Returns name of the thread
+6. t.name: This is a property that represent the thread name.
+
+
+
+Synchronization, Race Condition:
+---------------------------------------
+MultiTasking:
+----------------
+- In multitasking several task are executed at a time.
+- So we need more than two thread and these threads are work as parallel.
+
+Example:
+-------------
+1. When we go to movie theatre, generally a person is there at the door checking and cutting the tickets.
+2. When we enter in hall there is another person who shows the chairs to us.
+3. Suppose there is only one person doing these two job. He has to first cut the ticket and then come along with the person
+   to show there chair.
+4. Then he has go back and check second person and perform same task as first person.
+5. Like this, if he does the things one by one , it takes a lots time.
+6. The owner of the theater hire one employee now the required time is less as compared to previous.
+7. In multitasking threads works simoultanously.
+8. Lets check the problem.
+
+Example:
+---------------
+from threading import *
+from time import *
+
+class Theater:
+    def _init_(self,str):
+        self.str = str
+
+    def movieShow(self):
+        for i in range(1,6,1):
+            print(self.str,":",i)
+            sleep(1)
+
+obj1 = Theater("Cut Ticket")
+obj2 = Theater("Show Chairs")
+
+t1 = Thread(target=obj1.movieShow)
+t2 = Thread(target=obj2.movieShow)
+
+t1.start()
+t2.start()
+
+- When you run the above example several times and you can see the results are different and sometimes they are absurd.
+- This is because we expected that the thread t1 should act first and then the thread t2 act.
+- But this is not happen, thread t2 responded prior to the thread t1. This is called race condition.
+- Race condition is a situation that occurs when threads are not acting in an expected sequence thus leading to
+  unreliable output.
+- We can solve this problem by using thread synchronization.
+
+
+Q. What is mean by thread synchronization?
+----------------------------------------------------
+- When a thread is already acting on an object, preventing any other thread from acting on the same object is called
+  thread synchronization.
+- The object on which the threads are synchronized is called synchronized object.
+- In python synchronization is achived by using lock() method.
+
+Examples:
+-------------
+from threading import Thread, Lock
+from time import *
+
+class Theater:
+    def _init_(self, str, lock):
+        self.str = str
+        self.lock = lock # shared lock
+
+    def movieShows(self):
+        with self.lock:  # Ensures only one thread run at time
+            for i in range(1,6):
+                print(self.str,":",i)
+                sleep(1)
+
+# create a single Lock Instance to be shared among threads
+lock = Lock()
+
+# create the object class Theater
+obj1 = Theater("Cut Ticket",lock)
+obj2 = Theater("Show Chair", lock)
+
+#create the Thread class
+t1 = Thread(target=obj1.movieShows)
+t2 = Thread(target=obj2.movieShows)
+
+# start the thread
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
